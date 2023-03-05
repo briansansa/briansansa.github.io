@@ -134,3 +134,10 @@ th, td {
     text-align: center;
     font-family: 'Tilt Warp', cursive;
     }
+#tab{
+        background-color:white;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        font-family: 'Tilt Warp', cursive;
+        }
