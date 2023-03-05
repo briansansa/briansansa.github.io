@@ -165,12 +165,12 @@
         final = final - yearlyStateTax;
         final = final - rent;
 
-        
+        document.getElementById("tab").innerHTML = "These Are Your Optimal Monthly Expenses"
         document.getElementById("sTax").innerHTML = "Your state tax is $" + precise_round(yearlyStateTax, 2);
         document.getElementById("fTax").innerHTML = "Your federal tax is $" + precise_round(federalTax, 2);
-        document.getElementById("tTax").innerHTML = "Your total income after tax is $" + precise_round(final, 2);
-        var trans = final * 0.16;
-        document.getElementById("trans").innerHTML = "$" + precise_round(trans, 2);
+        document.getElementById("tTax").innerHTML = "Your total annual income after tax is $" + precise_round(final, 2);
+        document.getElementById("trans").innerHTML = "$" + precise_round((final * 0.16)/12, 2);
+        document.getElementById("util").innerHTML = "$" + precise_round((final * 0.16)/12, 2);
         document.getElementById("ins").innerHTML = "$" + precise_round((final * 0.12)/12, 2);
         document.getElementById("food").innerHTML = "$" + precise_round((final * 0.12)/12, 2);
         document.getElementById("health").innerHTML = "$" + precise_round((final * 0.08)/12, 2);
@@ -250,7 +250,7 @@
         Insert annual household income: <input type="number" id="salary" placeholder = " Annual Income"/> <br />
         <p><br>
         </p>
-        Insert annual rent cost: <input type="number" id="rent" placeholder = " Rent Cost"/> <br />
+        Insert annual rent cost/property tax: <input type="number" id="rent" placeholder = " Rent Cost"/> <br />
         <p><br>
         </p>
         Insert amount of money given to charity or any other deductions: <input type="number" id="deductions" placeholder = " Charity"/> <br />
@@ -275,10 +275,18 @@
     </p>
     <p id = tTax>
     </p>
+    <p> <br>
+    </p>
+    <h3 id = tab>    
+    </h3>
+  <p>
+  
+  </p>
     <table class = "table">
        <thead>
         <tr>
          <th>Transportation</th>
+         <th>Utilities</th>
          <th>Insurance</th>
          <th>Food</th>
          <th>HealthCare</th>
@@ -293,6 +301,7 @@
        <tbody>
         <tr>
          <td id = trans></td>
+         <td id = util></td>
          <td id = ins></td>
          <td id = food></td>
          <td id = health></td>
